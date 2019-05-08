@@ -37,11 +37,11 @@ DHT dht(DHTPIN, DHTTYPE);
 
 
 /* Set these to your desired credentials. */
-const char *ssid = "konain7";  //ENTER YOUR WIFI SETTINGS
-const char *password = "kaunain216";  
+const char *ssid = "wifi_name";  //ENTER YOUR WIFI SETTINGS
+const char *password = "wifi_password";  
 
 //Web/Server address to read/write from 
-const char *host = "192.168.0.103";   //website or IP address of server
+const char *host = "ip_address";   //website or IP address of server
 
 //=======================================================================
 //                    Power on setup
@@ -114,7 +114,7 @@ String ff=String(f);
   //GET Data
  String  getData = "?temperature=" +tt + "&humidity=" +hh+"&HeatIndex="+ff; 
  //Note "?" added at front
-String  Link = "http://192.168.0.103/DTU1/formController.php" + getData;
+String  Link = "http://ip_address/php_code/get_data.php" + getData;
   
   http.begin(Link);     //Specify request destination
   
